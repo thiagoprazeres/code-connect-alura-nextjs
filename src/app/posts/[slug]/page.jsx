@@ -61,13 +61,13 @@ export default async function PostDetails({ params }) {
           <li aria-current="page">{post.title}</li>
         </ul>
       </nav>
-      <article className="prose lg:prose-xl">
-        <h2 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
+      <article className="prose lg:prose-xl mt-5">
+        <h2>
           {post.title}
         </h2>
         <img src={post.cover} alt={post.title} className="mb-3 w-full" />
-        <p className="mb-3 text-gray-500 dark:text-gray-400">{post.body}</p>
-        <h3 className="my-3 text-3xl font-bold dark:text-white">Código:</h3>
+        <p>{post.body}</p>
+        <h3>Código:</h3>
         <div
           dangerouslySetInnerHTML={{ __html: contentHtml }}
           className="mockup-code"
