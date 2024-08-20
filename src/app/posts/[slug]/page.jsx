@@ -34,7 +34,7 @@ export default async function PostDetails({ params }) {
   const contentHtml = await markdownToHtml(post.markdown);
 
   return (
-    <section>
+    <section className="px-5 py-3">
       <nav className="breadcrumbs text-sm" aria-label="Breadcrumb">
         <ul>
           <li>
