@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu min-h-full w-80 bg-base-200 p-4 text-base-content">
+            <ul className="menu min-h-full w-80 bg-base-100 p-4 text-base-content">
               <Brand />
               <li className="mt-5">
                 <a>

@@ -7,7 +7,7 @@ export const CardPost = ({ post }) => {
   return (
     <Link
       href={`/posts/${post.slug}`}
-      className="bg-base-00 card w-full shadow-xl"
+      className="bg-base-300 card w-full shadow-xl"
     >
       <article>
         <header>
