@@ -2,6 +2,8 @@ import markdownToHtml from "../../lib/markdownToHtml";
 import { postsData } from "../../../data/posts";
 import { Avatar } from "@/components/Avatar";
 
+import Image from "next/image";
+
 export async function generateStaticParams() {
   return postsData.posts.map((post) => ({
     slug: post.slug,
@@ -34,7 +36,7 @@ export default async function PostDetails({ params }) {
   const contentHtml = await markdownToHtml(post.markdown);
 
   return (
-    <section className="px-5 py-3">
+    <section className="bg-primary-content px-5 py-3 lg:px-8 lg:py-5">
       <nav className="breadcrumbs text-sm" aria-label="Breadcrumb">
         <ul>
           <li>
@@ -52,7 +54,7 @@ export default async function PostDetails({ params }) {
           </li>
           <li>
             <a
-              href="/posts"
+              href="/"
               className="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white"
             >
               Posts
@@ -61,18 +63,16 @@ export default async function PostDetails({ params }) {
           <li aria-current="page">{post.title}</li>
         </ul>
       </nav>
-      <article className="prose lg:prose-xl mt-5">
-        <h2>
-          {post.title}
-        </h2>
-        <img src={post.cover} alt={post.title} className="mb-3 w-full" />
+      <article className="mt-5">
+        <h2 className="text-3xl font-black mb-3">{post.title}</h2>
+        <Image src={post.cover} alt={post.title} width={945} height={300} className="mb-3 w-full" />
         <p>{post.body}</p>
-        <h3>Código:</h3>
+        <h3 className="text-xl font-bold my-3">Código:</h3>
         <div
           dangerouslySetInnerHTML={{ __html: contentHtml }}
           className="mockup-code"
         />
-        <div>
+        <div className="mt-8">
           <Avatar imageSrc={post.author.avatar} name={post.author.username} />
         </div>
       </article>

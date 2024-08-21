@@ -3,8 +3,8 @@ import { postsData } from "../data/posts.js";
 
 export default function Page() {
   return (
-    <main className="px-5 py-3">
-      <h1 className="text-4xl font-extrabold dark:text-white">Lista de postagens</h1>
+    <main className="px-5 py-3 lg:px-8 lg:py-5">
+      <h1 className="text-4xl font-extrabold dark:text-white mb-4">Lista de postagens</h1>
       <div className="stats bg-dark shadow">
         <div className="stat">
           <div className="stat-title">Total de posts</div>

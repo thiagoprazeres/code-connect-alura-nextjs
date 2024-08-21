@@ -27,27 +27,33 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${roboto_mono.variable}`}
     >
       <body>
-        <div className="drawer lg:drawer-open">
+        <div className="drawer bg-primary-content lg:drawer-open">
           <input id="menu-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col">
-            <label
-              htmlFor="menu-drawer"
-              className="btn btn-square btn-ghost drawer-button lg:hidden"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block h-5 w-5 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </label>
+            <div className="navbar lg:hidden">
+              <div className="flex-none">
+                <label htmlFor="menu-drawer" className="btn btn-square btn-ghost">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    className="inline-block h-5 w-5 stroke-current"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
+                  </svg>
+                </label>
+              </div>
+              <div className="flex-1">
+                <a href="/" className="btn btn-ghost text-xl">
+                  ConnectCode
+                </a>
+              </div>
+            </div>
             {children}
           </div>
           <div className="drawer-side">
@@ -56,7 +62,7 @@ export default function RootLayout({ children }) {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+            <ul className="menu min-h-full w-80 bg-base-200 p-4 text-base-content">
               <Brand />
               <li className="mt-5">
                 <a>
